@@ -1,0 +1,84 @@
+.section-one{
+    display: flex;
+    align-items: center;
+    height: 700px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; /* for overlay layering */
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Overlay to make text readable */
+.section-one::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* dark overlay */
+    z-index: 1;
+}
+
+
+.section-one .box-one{
+    /* background-color: lightpink; */
+    width: 30%;
+    margin-left: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.section-one h1{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+
+}
+
+.section-one p{
+    font-size: 13px;
+    margin-bottom: 36px;
+}
+
+.section-one h1,
+.section-one p{
+    color: aliceblue;
+}
+
+.section-one .learn-more{
+    background-color: rgb(218, 6, 6);
+    color:white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity 0.15s, padding-top 0.5s, padding-bottom 0.5s, padding-left 0.5s , padding-right 0.5s ;
+    vertical-align: top;
+    font-size: 16px;
+}
+
+.section-one .learn-more:hover {
+    background-color: rgb(180, 0, 0);
+    transform: scale(1.02);
+}
+
+@media(max-width: 768px){
+    .section-one {
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .section-one .box-one {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+}
