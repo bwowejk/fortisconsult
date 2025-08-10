@@ -1,0 +1,57 @@
+.section-one {
+    
+    background-image: url('/images/optimized/vision_cover.jpeg');
+    background-size: cover;         /* Corrected this line */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: aliceblue;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 50px;
+    position: relative;
+}
+
+/* Optional: dark overlay for better text visibility */
+.section-one::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* semi-transparent black */
+    z-index: 1;
+}
+
+/* Ensure text appears above overlay */
+.section-one h1,
+.section-one p {
+    z-index: 2;
+    position: relative;
+    color: white;
+}
+
+
+
+
+.section-one h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.section-one p {
+    font-size: 14px;
+}
+
+
+@media(max-width: 768px) {
+    .section-one {
+        text-align: center;
+    }
+
+}

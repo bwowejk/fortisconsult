@@ -1,0 +1,9 @@
+.section-one{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(96, 96, 96);
+    
+}

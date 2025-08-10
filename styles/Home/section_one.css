@@ -1,0 +1,110 @@
+.section-one {
+    /* Slider variables */
+    --fade-duration: 2s;
+    --base-image: url('/images/optimized/IMG_4273.jpeg');
+    --top-image:  url('/images/optimized/IMG_4273.jpeg');
+
+    display: flex;
+    align-items: center;
+    height: 700px;
+
+    background-image: var(--base-image); /* incoming image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* Dark overlay to make text readable */
+.section-one::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Above images, below text */
+}
+
+/* Top image layer */
+.section-one::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--top-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: opacity var(--fade-duration) ease-in-out;
+    z-index: 1; /* Below overlay */
+}
+
+/* Fading out top image */
+.section-one.fade-top::after {
+    opacity: 0;
+}
+
+/* Instantly reset opacity (no animation) */
+.section-one.no-transition::after {
+    transition: none !important;
+}
+
+/* Text content */
+.section-one .box-one {
+    width: 30%;
+    margin-left: 80px;
+    position: relative;
+    z-index: 3; /* Above overlay */
+}
+
+.section-one h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    color: aliceblue;
+}
+
+.section-one p {
+    font-size: 13px;
+    margin-bottom: 36px;
+    color: aliceblue;
+}
+
+/* Button styling */
+.section-one .learn-more {
+    background-color: rgb(218, 6, 6);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 
+        opacity 0.15s,
+        padding 0.5s,
+        transform 0.3s ease;
+}
+
+.section-one .learn-more:hover {
+    background-color: rgb(180, 0, 0);
+    transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-one {
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .section-one .box-one {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+}
